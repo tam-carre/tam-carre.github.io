@@ -1,6 +1,6 @@
-import { Map } from 'immutable'
+import { OrderedMap } from 'immutable'
 
-export const credits: Map<ContributorCategory, Contributor[]> = Map({
+export const credits: OrderedMap<CreditCategory, Contributor[]> = OrderedMap({
   Organization: [
     {
       name: 'tam（タム）', url: 'https://twitter.com/tam_vaccount',
@@ -21,15 +21,24 @@ export const credits: Map<ContributorCategory, Contributor[]> = Map({
     { name: 'monoAI', url: 'https://twitter.com/monoai_' }
   ],
   Artwork: [
-    // Please input their name (Japanese preferred), and Twitter URL
+    {
+      name: 'mop', url: 'https://www.pixiv.net/en/users/2083795',
+      artworks: [
+        {
+          title: 'どこの組のもんじゃい？',
+          url: 'https://www.pixiv.net/en/artworks/79038147'
+        }
+      ]
+    },
+    // Please input their main name, and Twitter URL
     // If no Twitter URL then Pixiv URL
-
+    //
     // [OK!!!] Coco with Luna back: [TAIWAN]
     // https://www.pixiv.net/en/artworks/79038147
 
     // [OK!!!] Cozy Gen 4 [EN] [REQUESTED ON TWITTER]
     // https://www.pixiv.net/en/artworks/89126212
-    // https://www.pixiv.net/en/artworks/86730174 <= need to ask this too
+    // https://www.pixiv.net/en/artworks/86730174
 
     // [OK!!!] chibi yonksei [JP] [PRELIMINARY DM REQUEST ON TWITTER]
     // https://www.pixiv.net/en/artworks/89232325
@@ -42,28 +51,40 @@ export const credits: Map<ContributorCategory, Contributor[]> = Map({
     { name: 'Cain Chin', url: 'https://twitter.com/cain_chin' },
     // Please include the clipping channels' names and their Twitter URL
     // if no Twitter URL then their YouTube ch URL
+
     // https://www.youtube.com/playlist?list=PLAW64Usi0SJFIRk-2RzTVk9vExyIBhTHw&jct=HVa9mT52CFQx49UuCLQQNy1RsNLt0g
   ],
   'HimeCoco playlist': [
+    // Please include the playlist contributors' names and
+    // twitter url if they have a twitter account they use for luknight
+    // activities.
+    // ask them if needed.
     { name: 'Cain Chin', url: 'https://twitter.com/cain_chin' },
     { name: 'Marshall Lee', url: 'https://twitter.com/Marshall_Lee_A' },
   ]
-})
+}) as OrderedMap<CreditCategory, Contributor[]>
 
 ///////////////////////////////////////////////////////////////////////////////
 
 const contributorCategories = [
-  'Artwork',
   'Organization',
   'Website',
+  'Artwork',
   'Clipping',
   'HimeCoco playlist'
 ] as const
 
-type ContributorCategory = typeof contributorCategories[number]
+type CreditCategory = typeof contributorCategories[number]
 
 interface Contributor {
   name: string,
   url?: string,
-  details?: string
+  details?: string,
+  artworks?: Artwork[]
 }
+
+interface Artwork {
+  title: string,
+  url: string
+}
+
