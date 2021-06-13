@@ -19,7 +19,7 @@ export const credits: Map<ContributorCategory, Contributor[]> = Map({
   Website: [
     { name: 'tam（タム）', url: 'https://twitter.com/tam_vaccount' },
     { name: 'monoAI', url: 'https://twitter.com/monoai_' }
-  ]
+  ],
   Artwork: [
     // Please input their name (Japanese preferred), and Twitter URL
     // If no Twitter URL then Pixiv URL
@@ -42,6 +42,7 @@ export const credits: Map<ContributorCategory, Contributor[]> = Map({
     { name: 'Cain Chin', url: 'https://twitter.com/cain_chin' },
     // Please include the clipping channels' names and their Twitter URL
     // if no Twitter URL then their YouTube ch URL
+    // https://www.youtube.com/playlist?list=PLAW64Usi0SJFIRk-2RzTVk9vExyIBhTHw&jct=HVa9mT52CFQx49UuCLQQNy1RsNLt0g
   ],
   'HimeCoco playlist': [
     { name: 'Cain Chin', url: 'https://twitter.com/cain_chin' },
