@@ -33,9 +33,6 @@ export const credits: OrderedMap<CreditCategory, Contributor[]> = OrderedMap({
     // Please input their main name, and Twitter URL
     // If no Twitter URL then Pixiv URL
     //
-    // [OK!!!] Coco with Luna back: [TAIWAN]
-    // https://www.pixiv.net/en/artworks/79038147
-
     // [OK!!!] Cozy Gen 4 [EN] [REQUESTED ON TWITTER]
     // https://www.pixiv.net/en/artworks/89126212
     // https://www.pixiv.net/en/artworks/86730174
